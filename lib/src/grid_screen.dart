@@ -10,9 +10,9 @@ class CustomGridView extends StatefulWidget {
 
   const CustomGridView(
       {Key? key,
-      required this.alphabetsList,
-      required this.column,
-      required this.row})
+        required this.alphabetsList,
+        required this.column,
+        required this.row})
       : super(key: key);
 
   @override
@@ -62,7 +62,7 @@ class _CustomGridViewState extends State<CustomGridView> {
               border: Border.all(width: 1.0),
               borderRadius: const BorderRadius.all(
                   Radius.circular(11) //                 <--- border radius here
-                  ),
+              ),
             ),
             child: ListTile(
               leading: const Icon(
@@ -103,14 +103,14 @@ class _CustomGridViewState extends State<CustomGridView> {
                       child: TextFormField(
                         initialValue: widget.alphabetsList[index],
                         style: TextStyle(
-                          fontSize: height*0.07,
-                            color: searchValue == widget.alphabetsList[index]
+                            fontSize: height*0.021,
+                            color: searchValue.contains(widget.alphabetsList[index])
                                 ? Colors.cyanAccent
                                 : Colors.white,
                             fontWeight:
-                                searchValue == widget.alphabetsList[index]
-                                    ? FontWeight.bold
-                                    : FontWeight.normal),
+                            searchValue.contains(widget.alphabetsList[index])
+                                ? FontWeight.bold
+                                : FontWeight.normal),
                         decoration: const InputDecoration(
                           border: InputBorder.none,
                         ),
